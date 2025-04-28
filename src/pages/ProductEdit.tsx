@@ -201,8 +201,8 @@ const ProductEdit: React.FC = () => {
                 rules={[{ required: true, message: 'Please select a category' }]}
               >
                 <Select placeholder="Select category" loading={isLoadingCategories}>
-                  {categories?.map((category: string) => (
-                    <Option key={category} value={category}>{category}</Option>
+                  {categories?.map((category) => (
+                    <Option key={category.slug} value={category.slug}>{category.name}</Option>
                   ))}
                 </Select>
               </Form.Item>
