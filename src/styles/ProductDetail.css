@@ -1,11 +1,12 @@
 .product-detail-container {
   margin-top: 24px;
   width: 100%;
-  /* padding-top: 64px; */
   padding-bottom: 40px;
 }
 
 .product-detail-breadcrumb {
+  text-align: left;
+  margin-left: 16px;
   margin-bottom: 16px;
   font-size: 14px;
 }
@@ -21,7 +22,6 @@
 .product-image-card,
 .product-info-card,
 .product-reviews-card {
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
   border-radius: 8px;
   height: 100%;
 }

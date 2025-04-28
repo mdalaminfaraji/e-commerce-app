@@ -5,6 +5,8 @@
 }
 
 .edit-breadcrumb {
+  text-align: left;
+  margin-left: 16px;
   margin-bottom: 16px;
   font-size: 14px;
 }
