@@ -9,7 +9,7 @@ const { Content, Footer } = Layout;
 
 const MainLayout: React.FC = () => {
   return (
-    <Layout className="layout">
+    <Layout className="main-layout">
       <Navbar />
       <Content className="main-content">
         <Outlet />
