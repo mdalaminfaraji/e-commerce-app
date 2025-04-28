@@ -1,6 +1,7 @@
 .product-detail-container {
   margin-top: 24px;
   width: 100%;
+  padding-bottom: 40px;
 }
 
 .product-detail-breadcrumb {

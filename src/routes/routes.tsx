@@ -2,6 +2,7 @@ import MainLayout from "../layouts/MainLayout";
 import ProductList from "../pages/ProductList";
 import ProductDetail from "../pages/ProductDetail";
 import ProductEdit from "../pages/ProductEdit";
+import Categories from "../pages/Categories";
 import { Navigate, Route } from "react-router-dom";
 
 export interface AppRoute {
@@ -16,6 +17,7 @@ export const appRoutes: AppRoute[] = [
     element: <MainLayout />,
     children: [
       { path: "", element: <ProductList /> },
+      { path: "categories", element: <Categories /> },
       { path: "product/:id", element: <ProductDetail /> },
       { path: "product/edit/:id", element: <ProductEdit /> },
       { path: "*", element: <Navigate to="/" replace /> },

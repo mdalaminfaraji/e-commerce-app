@@ -9,13 +9,11 @@ body {
 }
 
 /* Layout styling */
-.layout {
+.main-layout {
   min-height: 100vh;
-  background-color: #f5f7fa;
-  width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
   display: flex;
   flex-direction: column;
+  padding-top: 64px; /* Add padding to account for fixed navbar */
 }
 
 /* Header styling */

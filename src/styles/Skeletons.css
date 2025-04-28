@@ -104,3 +104,19 @@
     width: 100%;
   }
 }
+
+/* Categories page skeleton */
+.skeleton-sider {
+  background: #fff;
+}
+
+.category-item-skeleton {
+  margin: 8px 0;
+  padding: 0 16px;
+}
+
+.skeleton-card .ant-skeleton-image {
+  width: 100% !important;
+  height: 200px !important;
+  margin-bottom: 12px;
+}

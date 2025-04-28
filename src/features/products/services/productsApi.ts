@@ -17,6 +17,10 @@ export const productsApi = createApi({
     getCategories: builder.query<Category[], void>({
       query: () => 'products/categories',
     }),
+    getProductsByCategory: builder.query<ProductsResponse, string>({
+      query: (category) => `products/category/${category}`,
+      providesTags: ['Products'],
+    }),
     updateProduct: builder.mutation<Product, Partial<Product> & { id: number }>({
       query: ({ id, ...patch }) => ({
         url: `products/${id}`,
@@ -35,5 +39,6 @@ export const {
   useGetProductsQuery,
   useGetProductQuery,
   useGetCategoriesQuery,
+  useGetProductsByCategoryQuery,
   useUpdateProductMutation,
 } = productsApi;
