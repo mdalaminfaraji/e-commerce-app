@@ -1,55 +1,106 @@
-# React + TypeScript + Vite
+# E-Commerce Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![E-Commerce App](public/e-commerce.jpg)
 
-Currently, two official plugins are available:
+A modern e-commerce application built with React, TypeScript, Redux Toolkit, RTK Query, and Ant Design. This application provides a comprehensive solution for managing products with a beautiful, responsive interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Features
 
-## Expanding the ESLint configuration
+### Product Management
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Product List:** Browse all products with pagination support
+- **Category Navigation:** Browse products by categories with a professional sidebar layout
+- **Product Details:** View comprehensive product information including images, specifications, and reviews
+- **Product Editing:** Modify product details with a user-friendly form interface
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### User Experience
+
+- **Responsive Design:** Fully responsive layout that works across devices
+- **Skeleton Loading:** Professional loading states for all pages to improve perceived performance
+- **Search Functionality:** Quick product search with dropdown suggestions
+- **Fixed Navigation:** Persistent navbar for easier site navigation
+
+## 🛠️ Technology Stack
+
+- **Frontend Framework:** React with TypeScript
+- **State Management:** Redux Toolkit
+- **API Integration:** RTK Query for efficient data fetching and caching
+- **UI Components:** Ant Design
+- **Routing:** React Router v6
+- **Build Tool:** Vite
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v14+)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/mdalaminfaraji/e-commerce-app.git
+   cd e-commerce-app
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open your browser and navigate to http://localhost:5173
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # Reusable components
+│   ├── skeletons/       # Skeleton loading components
+│   ├── Navbar.tsx       # Site navigation
+│   └── SearchBar.tsx    # Product search component
+├── features/
+│   └── products/        # Product feature module
+│       └── services/    # RTK Query services
+├── layouts/             # Layout components
+├── pages/               # Page components
+├── routes/              # Routing configuration
+├── store/               # Redux store configuration
+├── styles/              # CSS styles
+└── types/               # TypeScript type definitions
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔌 API Integration
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This application integrates with the following API endpoints from [DummyJSON](https://dummyjson.com/):
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# e-commerce-app
+- Products List: `GET https://dummyjson.com/products`
+- Product Details: `GET https://dummyjson.com/products/:id`
+- Product Categories: `GET https://dummyjson.com/products/categories`
+- Products by Category: `GET https://dummyjson.com/products/category/:category`
+- Update Product: `PATCH https://dummyjson.com/products/:id`
+
+## ✨ Future Enhancements
+
+- User authentication and profile management
+- Shopping cart functionality
+- Checkout process
+- Order history
+- Product reviews and ratings
+- Admin dashboard
+
+## 👨‍💻 Author
+
+**Md Alamin Faraji**
