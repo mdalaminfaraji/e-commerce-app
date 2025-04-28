@@ -1,0 +1,219 @@
+.home-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin-bottom: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, transparent 20%, #f0f2f5 20%, #f0f2f5 80%, transparent 80%, transparent), 
+              radial-gradient(circle, transparent 20%, #f0f2f5 20%, #f0f2f5 80%, transparent 80%, transparent) 25px 25px, 
+              linear-gradient(#e6f7ff 2px, transparent 2px) 0 -1px, 
+              linear-gradient(90deg, #e6f7ff 2px, #f5f7fa 2px) -1px 0;
+  background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  height: 100%;
+  padding: 32px 48px;
+  z-index: 2;
+}
+
+.banner-text {
+  padding: 24px;
+}
+
+.banner-text h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+}
+
+.banner-description {
+  font-size: 18px;
+  margin-bottom: 32px;
+  max-width: 500px;
+  color: #4a4a4a;
+}
+
+.banner-image-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner-image-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: rgba(24, 144, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-product-image {
+  position: relative;
+  z-index: 3;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.animated-icon {
+  position: absolute;
+  font-size: 80px;
+  color: #1890ff;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+.icon-primary {
+  font-size: 100px;
+}
+
+.icon-secondary {
+  font-size: 70px;
+  color: #52c41a;
+  top: 30%;
+  left: 65%;
+  animation-delay: 1s;
+}
+
+.icon-tertiary {
+  font-size: 60px;
+  color: #fa8c16;
+  bottom: 25%;
+  left: 25%;
+  animation-delay: 2s;
+}
+
+.banner-badge {
+  position: absolute;
+  top: 120px;
+  right: 120px;
+  background-color: #ff4d4f;
+  color: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  transform: rotate(15deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 4;
+  animation: pulse 2s infinite;
+}
+
+.badge-text {
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 10px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1) rotate(15deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(15deg);
+  }
+  100% {
+    transform: scale(1) rotate(15deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-banner {
+    height: auto;
+    padding: 32px 0;
+  }
+
+  .banner-text h1 {
+    font-size: 32px;
+  }
+
+  .banner-description {
+    font-size: 16px;
+  }
+
+  .banner-image-container {
+    margin-top: 48px;
+  }
+
+  .banner-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .banner-badge {
+    top: 40px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .banner-product-image {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .animated-icon {
+    font-size: 60px;
+  }
+  
+  .icon-primary {
+    font-size: 80px;
+  }
+  
+  .icon-secondary {
+    font-size: 50px;
+  }
+  
+  .icon-tertiary {
+    font-size: 40px;
+  }
+}

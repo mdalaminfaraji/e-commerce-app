@@ -15,8 +15,10 @@ import { ShoppingOutlined, EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { useGetProductsQuery } from "../features/products/services/productsApi";
 import { Product } from "../types/product.types";
 import ProductListSkeleton from "../components/skeletons/ProductListSkeleton";
+import HomeBanner from "../components/HomeBanner";
 import "../styles/ProductList.css";
 import "../styles/Skeletons.css";
+import "../styles/HomeBanner.css";
 
 const { Title, Text } = Typography;
 
@@ -139,6 +141,7 @@ const ProductList: React.FC = () => {
 
   return (
     <div className="product-list-container">
+      <HomeBanner />
       <div className="product-list-header">
         <Title level={2}>
           <ShoppingOutlined /> Products
