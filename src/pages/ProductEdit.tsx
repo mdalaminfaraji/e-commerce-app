@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import ProductEditSkeleton from '../components/skeletons/ProductEditSkeleton';
+import '../styles/Skeletons.css';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import {
   Form,
@@ -13,7 +15,6 @@ import {
   Typography,
   Row,
   Col,
-  Spin,
   Alert,
   DatePicker,
   message,
@@ -67,13 +68,10 @@ const ProductEdit: React.FC = () => {
     }
   }, [product, form]);
 
-  if (isLoadingProduct || isLoadingCategories) {
-    return (
-      <div className="loading-container">
-        <Spin size="large" />
-        <p>Loading product data...</p>
-      </div>
-    );
+  const isLoading = isLoadingProduct || isLoadingCategories;
+
+  if (isLoading) {
+    return <ProductEditSkeleton />;
   }
 
   if (productError || !product) {

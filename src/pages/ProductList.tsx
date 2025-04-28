@@ -7,7 +7,6 @@ import {
   Tag,
   Typography,
   Image,
-  Spin,
   Space,
   Alert,
 } from "antd";
@@ -15,7 +14,9 @@ import { Link } from "react-router-dom";
 import { ShoppingOutlined, EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { useGetProductsQuery } from "../features/products/services/productsApi";
 import { Product } from "../types/product.types";
+import ProductListSkeleton from "../components/skeletons/ProductListSkeleton";
 import "../styles/ProductList.css";
+import "../styles/Skeletons.css";
 
 const { Title, Text } = Typography;
 
@@ -29,12 +30,7 @@ const ProductList: React.FC = () => {
   });
 
   if (isLoading) {
-    return (
-      <div className="loading-container">
-        <Spin size="large" />
-        <p>Loading products...</p>
-      </div>
-    );
+    return <ProductListSkeleton />;
   }
 
   if (error) {

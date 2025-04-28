@@ -1,0 +1,88 @@
+/* Navbar container - full width with fixed height */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  z-index: 100;
+}
+
+/* Fixed-width content container for the navbar */
+.navbar-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 16px;
+}
+
+/* Logo section - fixed width */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  min-width: 220px;
+  flex-shrink: 0; /* Prevent from shrinking */
+}
+
+/* Main navigation links */
+.navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden; /* Prevents any overflow */
+  margin: 0 20px;
+}
+
+/* Ensure menu items don't break layout */
+.navbar-links .ant-menu {
+  flex: 1;
+  border-bottom: none !important;
+}
+
+.navbar-links .ant-menu-item {
+  padding: 0 20px;
+}
+
+/* Search section - fixed width */
+.navbar-search {
+  width: 320px;
+  flex-shrink: 0; /* Prevent from shrinking */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-search {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 8px 16px;
+  }
+
+  .navbar-logo {
+    margin-bottom: 8px;
+  }
+
+  .navbar-links {
+    order: 3;
+    width: 100%;
+    margin: 8px 0 0;
+  }
+
+  .navbar-search {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .navbar-container {
+    height: auto;
+  }
+}

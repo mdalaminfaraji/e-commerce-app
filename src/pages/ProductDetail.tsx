@@ -12,7 +12,6 @@ import {
   Col,
   Divider,
   Avatar,
-  Spin,
   Space,
   Alert,
   Statistic,
@@ -25,7 +24,9 @@ import {
   CommentOutlined,
 } from "@ant-design/icons";
 import { useGetProductQuery } from "../features/products/services/productsApi";
+import ProductDetailSkeleton from '../components/skeletons/ProductDetailSkeleton';
 import "../styles/ProductDetail.css";
+import "../styles/Skeletons.css";
 
 const { Title, Text, Paragraph } = Typography;
 
@@ -36,12 +37,7 @@ const ProductDetail: React.FC = () => {
   const { data: product, isLoading, error } = useGetProductQuery(productId);
 
   if (isLoading) {
-    return (
-      <div className="loading-container">
-        <Spin size="large" />
-        <p>Loading product details...</p>
-      </div>
-    );
+    return <ProductDetailSkeleton />;
   }
 
   if (error || !product) {

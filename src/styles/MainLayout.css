@@ -40,7 +40,7 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 12px;
   height: 100%;
 }
 
@@ -73,7 +73,7 @@ body {
 /* Search component styling */
 .search-container {
   position: relative;
-  width: 360px;
+  width: 330px;
 }
 
 .search-input {
