@@ -15,6 +15,7 @@ import { ShoppingOutlined, EditOutlined, EyeOutlined } from "@ant-design/icons";
 import { useGetProductsQuery } from "../features/products/services/productsApi";
 import { Product } from "../types/product.types";
 import ProductListSkeleton from "../components/skeletons/ProductListSkeleton";
+import HomeBannerSkeleton from "../components/skeletons/HomeBannerSkeleton";
 import HomeBanner from "../components/HomeBanner";
 import "../styles/ProductList.css";
 import "../styles/Skeletons.css";
@@ -32,7 +33,12 @@ const ProductList: React.FC = () => {
   });
 
   if (isLoading) {
-    return <ProductListSkeleton />;
+    return (
+      <div className="product-list-container">
+        <HomeBannerSkeleton />
+        <ProductListSkeleton />
+      </div>
+    );
   }
 
   if (error) {
