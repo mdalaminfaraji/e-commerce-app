@@ -1,0 +1,154 @@
+.product-detail-container {
+  width: 100%;
+}
+
+.product-detail-breadcrumb {
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.product-detail-breadcrumb a {
+  color: #1890ff;
+}
+
+.product-detail-content {
+  margin-bottom: 24px;
+}
+
+.product-image-card,
+.product-info-card,
+.product-reviews-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  height: 100%;
+}
+
+.product-main-image {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+}
+
+.product-thumbnails {
+  display: flex;
+  margin-top: 16px;
+  overflow-x: auto;
+  gap: 8px;
+}
+
+.product-thumbnail-image {
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #f0f0f0;
+  transition: border-color 0.3s;
+}
+
+.product-thumbnail-image:hover {
+  border-color: #1890ff;
+}
+
+.product-header {
+  margin-bottom: 16px;
+}
+
+.product-brand {
+  margin-top: 8px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rating-value {
+  margin-left: 8px;
+  font-size: 16px;
+  color: #faad14;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.current-price {
+  margin: 0 !important;
+  color: #1890ff;
+}
+
+.original-price {
+  margin-left: 8px;
+  font-size: 16px;
+  color: #999;
+}
+
+.discount-tag {
+  margin-left: 8px;
+}
+
+.product-meta {
+  margin-top: 16px;
+}
+
+.product-specifications {
+  margin-top: 24px;
+}
+
+.product-tags {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tag-item {
+  margin-left: 8px;
+}
+
+.product-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-reviews-card {
+  margin-top: 24px;
+}
+
+.reviews-list {
+  margin-top: 16px;
+}
+
+.review-item {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.review-item:last-child {
+  border-bottom: none;
+}
+
+.no-reviews {
+  padding: 16px;
+  text-align: center;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+}

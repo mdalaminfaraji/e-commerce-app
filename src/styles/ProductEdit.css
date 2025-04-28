@@ -1,0 +1,67 @@
+.product-edit-container {
+  width: 100%;
+}
+
+.edit-breadcrumb {
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.edit-breadcrumb a {
+  color: #1890ff;
+  text-decoration: none;
+}
+
+.edit-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.edit-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.edit-form {
+  margin-top: 24px;
+}
+
+.tag-input {
+  margin-bottom: 24px;
+}
+
+.tag-list {
+  margin-bottom: 8px;
+}
+
+.review-card {
+  margin-bottom: 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.review-card-header h5 {
+  margin: 0;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+}
