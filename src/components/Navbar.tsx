@@ -1,7 +1,7 @@
-import React from "react";
-import { Menu, Typography, Image } from "antd";
-import { Link, useLocation } from "react-router-dom";
-import SearchBar from "./SearchBar";
+import React from 'react';
+import { Menu, Typography, Image } from 'antd';
+import { Link, useLocation } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const { Title } = Typography;
 
@@ -11,7 +11,6 @@ const Navbar: React.FC = () => {
   return (
     <div className="navbar-container">
       <div className="navbar-content">
-        {/* Logo section - fixed width */}
         <div className="navbar-logo">
           <Image src="/logo.png" width={32} height={32} />
           <Title level={3} style={{ margin: 0 }}>
@@ -20,27 +19,23 @@ const Navbar: React.FC = () => {
             </Link>
           </Title>
         </div>
-
-        {/* Navigation links - grow but with controlled width */}
         <div className="navbar-links">
           <Menu
             mode="horizontal"
             selectedKeys={[location.pathname]}
-            style={{ background: "transparent", border: "none" }}
+            style={{ background: 'transparent', border: 'none' }}
             items={[
               {
-                key: "/",
+                key: '/',
                 label: <Link to="/">Products</Link>,
               },
               {
-                key: "/categories",
+                key: '/categories',
                 label: <Link to="/categories">Categories</Link>,
               },
             ]}
           />
         </div>
-
-        {/* Search bar - fixed width */}
         <div className="navbar-search">
           <SearchBar />
         </div>

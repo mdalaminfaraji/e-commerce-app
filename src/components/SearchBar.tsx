@@ -15,10 +15,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
   const [search, setSearch] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
-  // Using RTK Query hook with error handling
   const { data, isLoading, error } = useGetProductsQuery({ limit: 100 });
 
-  // Log data for debugging
   useEffect(() => {
     if (data) {
       console.log('Products loaded:', data.products.length);
@@ -28,43 +26,36 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
     }
   }, [data, error]);
 
-  // Filter products by search
-  const filteredProducts = data?.products ? data.products.filter((product) =>
-    product.title.toLowerCase().includes(search.toLowerCase()) ||
-    product.brand?.toLowerCase().includes(search.toLowerCase()) ||
-    product.category.toLowerCase().includes(search.toLowerCase())
-  ) : [];
+  const filteredProducts = data?.products
+    ? data.products.filter(
+        product =>
+          product.title.toLowerCase().includes(search.toLowerCase()) ||
+          product.brand?.toLowerCase().includes(search.toLowerCase()) ||
+          product.category.toLowerCase().includes(search.toLowerCase()),
+      )
+    : [];
 
-  // Handle product selection
   const handleSelectProduct = (id: number) => {
     setDropdownOpen(false);
     setSearch('');
     navigate(`/product/${id}`);
   };
 
-  // Handle click outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (
-        searchRef.current &&
-        !searchRef.current.contains(event.target as Node)
-      ) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setDropdownOpen(false);
       }
     }
-    
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
-  // Search result item
   const SearchResultItem = ({ product }: { product: Product }) => (
-    <div
-      className="dropdown-item"
-      onMouseDown={() => handleSelectProduct(product.id)}
-    >
+    <div className="dropdown-item" onMouseDown={() => handleSelectProduct(product.id)}>
       <img src={product.thumbnail} alt={product.title} />
       <div className="dropdown-item-info">
         <span className="dropdown-item-title">{product.title}</span>
@@ -93,7 +84,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
         size="large"
         className="search-input"
       />
-      
+
       {dropdownOpen && search && (
         <div className="main-header-search-dropdown">
           {isLoading ? (
@@ -109,18 +100,19 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
             </div>
           ) : (
             <>
-              <div className="dropdown-header">
-                Found {filteredProducts.length} product(s)
-              </div>
+              <div className="dropdown-header">Found {filteredProducts.length} product(s)</div>
               <div className="dropdown-results">
                 {filteredProducts.slice(0, 6).map(product => (
                   <SearchResultItem key={product.id} product={product} />
                 ))}
                 {filteredProducts.length > 6 && (
-                  <div className="dropdown-footer" onClick={() => {
-                    navigate(`/?search=${encodeURIComponent(search)}`);
-                    setDropdownOpen(false);
-                  }}>
+                  <div
+                    className="dropdown-footer"
+                    onClick={() => {
+                      navigate(`/?search=${encodeURIComponent(search)}`);
+                      setDropdownOpen(false);
+                    }}
+                  >
                     View all {filteredProducts.length} results
                   </div>
                 )}
