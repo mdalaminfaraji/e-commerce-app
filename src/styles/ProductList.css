@@ -2,6 +2,8 @@
   width: 100%;
   margin-top: 24px;
   padding-bottom: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .product-list-header {
@@ -10,6 +12,7 @@
 
 .product-list-card {
   border-radius: 8px;
+  overflow-x: auto;
 }
 
 .products-table .ant-table {
@@ -101,4 +104,103 @@
   align-items: center;
   height: 300px;
   width: 100%;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 992px) {
+  .products-table .ant-table {
+    font-size: 14px;
+  }
+  
+  .product-title {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+  
+  .product-cell {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-list-container {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 16px;
+  }
+  
+  .product-list-header {
+    margin-bottom: 16px;
+  }
+  
+  .product-thumbnail {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .product-info {
+    margin-left: 12px;
+  }
+  
+  .product-title {
+    font-size: 14px;
+    max-width: 120px;
+  }
+  
+  .product-tags {
+    display: none;
+  }
+  
+  .rating-column .ant-rate {
+    font-size: 12px;
+  }
+  
+  .products-table .ant-table-pagination {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-list-container {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  
+  .product-list-card {
+    border-radius: 4px;
+  }
+  
+  .products-table .ant-table-thead > tr > th:nth-child(2),
+  .products-table .ant-table-tbody > tr > td:nth-child(2),
+  .products-table .ant-table-thead > tr > th:nth-child(5),
+  .products-table .ant-table-tbody > tr > td:nth-child(5) {
+    display: none;
+  }
+  
+  .product-cell {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-info {
+    margin-left: 0;
+    margin-top: 8px;
+    text-align: center;
+  }
+  
+  .product-title {
+    max-width: 100px;
+    font-size: 12px;
+  }
+  
+  .view-btn,
+  .edit-btn {
+    padding: 0 8px;
+    height: 28px;
+    font-size: 12px;
+  }
 }

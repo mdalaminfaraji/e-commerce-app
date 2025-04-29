@@ -1,8 +1,8 @@
 import React from "react";
-import { Row, Col, Typography, Button, Space } from "antd";
+import { Row, Col, Typography, Button } from "antd";
 import { ShoppingOutlined, TagOutlined, GiftOutlined, RocketOutlined, ThunderboltOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
-import "../styles/HomeBanner.css";
+import { Link } from 'react-router-dom';
+import '../styles/HomeBanner.css';
 
 const { Title, Paragraph } = Typography;
 
@@ -13,25 +13,23 @@ const HomeBanner: React.FC = () => {
       <Row className="banner-content" gutter={[24, 24]} align="middle">
         <Col xs={24} md={14} lg={12}>
           <div className="banner-text">
-            <Title level={1}>
-              Discover Premium Products for Every Need
-            </Title>
+            <Title level={1}>Discover Premium Products for Every Need</Title>
             <Paragraph className="banner-description">
-              Explore our extensive collection of high-quality items at competitive prices.
-              From electronics to fashion, we have everything you're looking for.
+              Explore our extensive collection of high-quality items at competitive prices. From
+              electronics to fashion, we have everything you're looking for.
             </Paragraph>
-            <Space size="middle">
+            <div className="banner-buttons">
               <Link to="/categories">
-                <Button type="primary" size="large" icon={<TagOutlined />}>
+                <Button type="primary" size="large" icon={<TagOutlined />} className="banner-button primary-button">
                   Browse Categories
                 </Button>
               </Link>
               <Link to="/">
-                <Button size="large" icon={<ShoppingOutlined />}>
+                <Button size="large" icon={<ShoppingOutlined />} className="banner-button secondary-button">
                   View All Products
                 </Button>
               </Link>
-            </Space>
+            </div>
           </div>
         </Col>
         <Col xs={24} md={10} lg={12} className="banner-image-container">

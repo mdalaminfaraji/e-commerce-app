@@ -243,6 +243,10 @@ body {
   .search-container {
     width: 280px;
   }
+  
+  .main-header-search-dropdown {
+    max-height: 350px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -253,6 +257,11 @@ body {
     min-height: 64px;
   }
 
+  .header-content-wrapper {
+    flex-wrap: wrap;
+    padding: 8px;
+  }
+
   .search-container {
     width: 100%;
     margin-top: 8px;
@@ -261,9 +270,73 @@ body {
   }
 
   .main-header-search-dropdown {
-    position: fixed;
-    left: 16px;
-    right: 16px;
-    width: calc(100% - 32px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 300px;
+    z-index: 1010;
+  }
+  
+  .dropdown-item {
+    padding: 10px 12px;
+  }
+  
+  .dropdown-item-title {
+    font-size: 14px;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 0 8px;
+  }
+  
+  .header-content-wrapper {
+    padding: 4px;
+  }
+  
+  .main-logo {
+    font-size: 18px;
+  }
+  
+  .search-container {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  
+  .search-input {
+    height: 38px;
+    font-size: 14px;
+  }
+  
+  .main-header-search-dropdown {
+    max-height: 250px;
+  }
+  
+  .dropdown-item {
+    padding: 8px 10px;
+  }
+  
+  .dropdown-item img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+  
+  .dropdown-item-title {
+    font-size: 13px;
+    max-width: 120px;
+  }
+  
+  .dropdown-item-brand {
+    font-size: 11px;
+  }
+  
+  .dropdown-item-price {
+    font-size: 13px;
+    margin-left: 8px;
   }
 }
